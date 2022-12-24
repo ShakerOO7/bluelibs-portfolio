@@ -1,0 +1,57 @@
+{
+  "en": {
+    "management": {
+      "about_me": {
+        "fields": {
+          "_id": "ID",
+          "createdAt": "Created At",
+          "createdAt_description": "Represents the date when this object was created",
+          "updatedAt": "Updated At",
+          "updatedAt_description": "Represents the last time when the object was updated",
+          "fullname": "Fullname",
+          "email": "Email",
+          "phone": "Phone",
+          "address": "Address",
+          "address.city": "Address — City",
+          "address.country": "Address — Country",
+          "socialLinks": "Social Links",
+          "socialLinks.facebook": "Social Links — Facebook",
+          "socialLinks.twitter": "Social Links — Twitter",
+          "socialLinks.github": "Social Links — Github",
+          "socialLinks.linkedin": "Social Links — Linkedin",
+          "socialLinks.meduim": "Social Links — Meduim",
+          "description": "Description",
+          "createdById": "createdById",
+          "createdById_description": "Represents the user's id who has created this object",
+          "updatedById": "updatedById",
+          "updatedById_description": "Represents the user's id who has made the latest update on this object",
+          "imageId": "imageId",
+          "createdBy": "Created By",
+          "createdBy_description": "Represents the user who has created this object",
+          "updatedBy": "Updated By",
+          "updatedBy_description": "Represents the user who has made the latest update on this object",
+          "image": "Image"
+        },
+        "menu": {
+          "title": "AboutMe"
+        },
+        "list": {
+          "header": "AboutMe List",
+          "create_btn": "New AboutMe"
+        },
+        "create": {
+          "header": "Create AboutMe"
+        },
+        "edit": {
+          "header": "Edit AboutMe"
+        },
+        "view": {
+          "header": "View AboutMe"
+        },
+        "delete_confirmation": "You have deleted the AboutMe",
+        "create_confirmation": "You successfully added a new AboutMe",
+        "edit_confirmation": "You successfully edited the AboutMe"
+      }
+    }
+  }
+}
