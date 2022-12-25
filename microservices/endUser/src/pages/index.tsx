@@ -1,13 +1,16 @@
 import type { NextPage } from 'next';
-import ProfileCard from '../bundles/UIAppBundle/components/ProfileCard/ProfileCard';
+import { ProfileCard } from '../bundles/UIAppBundle/components';
+import { Layout } from '../bundles/UIAppBundle/components/Layout';
 
 import styles from '../styles/Pages/Home.module.scss';
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <ProfileCard></ProfileCard>
-    </div>
+    <Layout>
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+    </Layout>
   );
 };
 
