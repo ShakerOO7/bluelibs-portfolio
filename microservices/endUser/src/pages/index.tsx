@@ -5,19 +5,13 @@ import {
   Layout,
   TechStack,
 } from '../bundles/UIAppBundle/components';
-import { TechStackService } from '../bundles/UIAppBundle/services';
 
 const Home: NextPage = () => {
-  // TODO: Create HOC for Providers
-  const [techStackApi, TechStackProvider] = newSmart(TechStackService);
-
   return (
-    <TechStackProvider>
-      <Layout>
-        <ProfileCard />
-        <TechStack />
-      </Layout>
-    </TechStackProvider>
+    <Layout>
+      <ProfileCard />
+      <TechStack />
+    </Layout>
   );
 };
 

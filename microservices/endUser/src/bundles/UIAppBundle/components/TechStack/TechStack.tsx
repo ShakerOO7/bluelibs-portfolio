@@ -1,10 +1,19 @@
 import styles from './TechStack.module.scss';
-import { useTechStackService } from '../../services';
+import { TechStackService, useTechStackService } from '../../services';
 import Image from 'next/image';
+import { FunctionComponent } from 'react';
+import { newSmart } from '@bluelibs/smart';
 
-interface TechStackProps {}
+const TechStack: FunctionComponent = () => {
+  const [, TechStackProvider] = newSmart(TechStackService);
+  return (
+    <TechStackProvider>
+      <TechStackConsumer />
+    </TechStackProvider>
+  );
+};
 
-export default function TechStack() {
+function TechStackConsumer() {
   const TechStackService = useTechStackService();
   let techStackState = TechStackService.state;
 
@@ -22,3 +31,5 @@ export default function TechStack() {
     </div>
   );
 }
+
+export default TechStack;
