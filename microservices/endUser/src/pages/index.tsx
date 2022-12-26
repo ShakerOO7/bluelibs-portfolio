@@ -1,4 +1,3 @@
-import { newSmart } from '@bluelibs/smart';
 import type { NextPage } from 'next';
 import {
   ProfileCard,

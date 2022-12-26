@@ -4,16 +4,16 @@ import Image from 'next/image';
 import { FunctionComponent } from 'react';
 import { newSmart } from '@bluelibs/smart';
 
-const TechStack: FunctionComponent = () => {
+const TechStackWrapper: FunctionComponent = () => {
   const [, TechStackProvider] = newSmart(TechStackService);
   return (
     <TechStackProvider>
-      <TechStackConsumer />
+      <TechStack />
     </TechStackProvider>
   );
 };
 
-function TechStackConsumer() {
+function TechStack() {
   const TechStackService = useTechStackService();
   let techStackState = TechStackService.state;
 
@@ -32,4 +32,4 @@ function TechStackConsumer() {
   );
 }
 
-export default TechStack;
+export default TechStackWrapper;
