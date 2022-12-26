@@ -2,6 +2,8 @@ import {
   Collection,
   CollectionLinkConfig,
   CollectionTransformMap,
+  IQueryInput,
+  QueryBodyType,
 } from '@bluelibs/x-ui';
 import { ImagesCollection, UsersCollection } from '..';
 import { TeckStack } from '../../../../api.types';
@@ -47,5 +49,15 @@ export class TeckStackCollection extends Collection<TeckStack> {
       createdAt: (v) => (v && new Date(v) ? new Date(v) : v),
       updatedAt: (v) => (v && new Date(v) ? new Date(v) : v),
     };
+  }
+
+  async find(query: IQueryInput, body?: QueryBodyType<TeckStack>) {
+    return await super.find(query, {
+      _id: 1,
+      name: 1,
+      order: 1,
+      image: { downloadUrl: 1 },
+      ...body,
+    });
   }
 }

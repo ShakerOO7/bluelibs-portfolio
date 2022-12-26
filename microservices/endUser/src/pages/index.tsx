@@ -1,16 +1,23 @@
+import { newSmart } from '@bluelibs/smart';
 import type { NextPage } from 'next';
-import { ProfileCard } from '../bundles/UIAppBundle/components';
-import { Layout } from '../bundles/UIAppBundle/components/Layout';
-
-import styles from '../styles/Pages/Home.module.scss';
+import {
+  ProfileCard,
+  Layout,
+  TechStack,
+} from '../bundles/UIAppBundle/components';
+import { TechStackService } from '../bundles/UIAppBundle/services';
 
 const Home: NextPage = () => {
+  // TODO: Create HOC for Providers
+  const [techStackApi, TechStackProvider] = newSmart(TechStackService);
+
   return (
-    <Layout>
-      <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
-    </Layout>
+    <TechStackProvider>
+      <Layout>
+        <ProfileCard />
+        <TechStack />
+      </Layout>
+    </TechStackProvider>
   );
 };
 

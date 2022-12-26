@@ -1,0 +1,39 @@
+@use '../../../../styles/colors.scss' as c;
+@use '../../../../styles/variables.scss' as v;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 50px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: v.$font-size-xxxxl;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: c.$white-2;
+  margin: auto;
+}
+
+.description {
+  font-weight: 400;
+  font-size: v.$font-size-xxxl + 2;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+
+  color: #a7a7a7;
+}
+
+.image-list {
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px 60px;
+  justify-content: center;
+}

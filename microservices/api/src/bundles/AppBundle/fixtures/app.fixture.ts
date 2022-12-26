@@ -48,6 +48,9 @@ export class AppFixture {
     if (dataMap["users"]) {
       await this.handleUsers();
     }
+    if (dataMap["images"]) {
+      await this.handleImages();
+    }
   }
 
   async clean() {
@@ -79,8 +82,15 @@ export class AppFixture {
     }
   }
 
+  async handleImages() {
+    const imageUrl = "https://picsum.photos/200";
+    const imagesCollection = this.databaseService.getCollection("images");
+    await imagesCollection.updateMany({}, { $set: { downloadUrl: imageUrl } });
+  }
+
   // Runs if all data maps are empty or we're in a test environment
   async shouldRun() {
+    return false;
     if (this.kernel.isTesting()) return false;
 
     for (const collectionName in dataMap) {
