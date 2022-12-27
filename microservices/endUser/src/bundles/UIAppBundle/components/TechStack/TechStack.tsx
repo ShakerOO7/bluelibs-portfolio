@@ -15,7 +15,7 @@ const TechStackWrapper: FunctionComponent = () => {
 
 function TechStack() {
   const TechStackService = useTechStackService();
-  let techStackState = TechStackService.state;
+  const techStackState = TechStackService.state;
 
   return (
     <div className={styles.container}>
