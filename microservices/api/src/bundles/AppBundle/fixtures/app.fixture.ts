@@ -51,6 +51,9 @@ export class AppFixture {
     if (dataMap["images"]) {
       await this.handleImages();
     }
+    if (dataMap["projects"]) {
+      await this.handleProjects();
+    }
   }
 
   async clean() {
@@ -83,14 +86,20 @@ export class AppFixture {
   }
 
   async handleImages() {
-    const imageUrl = "https://picsum.photos/200";
-    const imagesCollection = this.databaseService.getCollection("images");
-    await imagesCollection.updateMany({}, { $set: { downloadUrl: imageUrl } });
+    const IMAGE_URL = "https://picsum.photos/200";
+    const imagesCollection = this.databaseService.getMongoCollection("images");
+    await imagesCollection.updateMany({}, { $set: { downloadUrl: IMAGE_URL } });
+  }
+
+  async handleProjects() {
+    const CODE_URL = "https://google.com";
+    const projectsCollection =
+      this.databaseService.getMongoCollection("projects");
+    await projectsCollection.updateMany({}, { $set: { codeUrl: CODE_URL } });
   }
 
   // Runs if all data maps are empty or we're in a test environment
   async shouldRun() {
-    return false;
     if (this.kernel.isTesting()) return false;
 
     for (const collectionName in dataMap) {

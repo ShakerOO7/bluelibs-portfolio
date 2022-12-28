@@ -1,8 +1,10 @@
-import styles from './TechStack.module.scss';
-import { TechStackService, useTechStackService } from '../../services';
-import Image from 'next/image';
 import { FunctionComponent } from 'react';
+import Image from 'next/image';
 import { newSmart } from '@bluelibs/smart';
+
+import { TechStackService, useTechStackService } from '../../services';
+
+import styles from './TechStack.module.scss';
 
 const TechStackWrapper: FunctionComponent = () => {
   const [, TechStackProvider] = newSmart(TechStackService);
@@ -19,8 +21,8 @@ function TechStack() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>My Tech Stack</div>
-      <div className={styles.description}>
+      <div className={'title'}>My Tech Stack</div>
+      <div className={'description'}>
         Technologies I’ve been working with recently
       </div>
       <div className={styles['image-list']}>

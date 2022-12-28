@@ -35,7 +35,7 @@ export class TechStackService extends Smart<ITechStackState> {
    * Fetch data from repository
    */
   async fetch() {
-    return await this.techStackCollection.find({});
+    return await this.techStackCollection.find({options:{sort: {order: 1}}});
   }
 
   static getContext() {

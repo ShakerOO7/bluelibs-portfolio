@@ -7,6 +7,12 @@ module.exports = {
   },
 
   images: {
-    domains: ['picsum.photos'],
+    domains: [
+      'picsum.photos',
+      's.alamy.com',
+      'cdn.jsdelivr.net',
+      'sublime-staging-presentation.herokuapp.com',
+      'setalkel.co',
+    ],
   },
 };

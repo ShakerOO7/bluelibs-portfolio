@@ -1,13 +1,17 @@
-import { Service } from "@bluelibs/core";
-import { QueryBodyType } from "@bluelibs/x-ui";
-import { TeckStack } from "@bundles/UIAppBundle/collections";
-import { TeckStackList as BaseTeckStackList } from "./TeckStackList.base";
+import { Service } from '@bluelibs/core';
+import { QueryBodyType } from '@bluelibs/x-ui';
+import { TeckStack } from '@bundles/UIAppBundle/collections';
+import { TeckStackList as BaseTeckStackList } from './TeckStackList.base';
 
 @Service({ transient: true })
 export class TeckStackList extends BaseTeckStackList {
   build() {
     super.build();
     // Perform additional modifications such as updating how a list item renders or add additional ones
+    this.remove('createdAt');
+    this.remove('createdBy');
+    this.remove('updatedAt');
+    this.remove('updatedBy');
   }
 
   static getRequestBody(): QueryBodyType<TeckStack> {

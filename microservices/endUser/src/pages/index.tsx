@@ -3,6 +3,7 @@ import {
   ProfileCard,
   Layout,
   TechStack,
+  Projects,
 } from '../bundles/UIAppBundle/components';
 
 const Home: NextPage = () => {
@@ -10,6 +11,7 @@ const Home: NextPage = () => {
     <Layout>
       <ProfileCard />
       <TechStack />
+      <Projects />
     </Layout>
   );
 };

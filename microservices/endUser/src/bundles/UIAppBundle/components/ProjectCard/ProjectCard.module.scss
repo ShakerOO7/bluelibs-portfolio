@@ -1,0 +1,72 @@
+@use '../../../../styles/colors.scss' as c;
+@use '../../../../styles/variables.scss' as v;
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  background: c.$gray;
+  box-shadow: 2px 2px 100px c.$shadow-black;
+  border-radius: v.$border-radius-4;
+
+  width: 373px;
+  // min-width: 373px;
+  // max-width: 600px;
+  height: 567px;
+}
+
+.image-container {
+  flex: 1;
+  width: 100%;
+  height: 20%;
+  background-size: cover;
+  // object-fit: contain;
+  .image {
+    // padding: 32px;
+    display: flex;
+    flex: 1;
+    border-top-left-radius: v.$border-radius-4;
+    border-top-right-radius: v.$border-radius-4;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: v.$padding-9;
+
+  margin: 8%;
+  margin-top: 0px;
+  height: 80%;
+}
+
+.title {
+  color: c.$white-2;
+  font-size: v.$font-size-xxl + 1;
+  font-weight: 500;
+}
+
+.description {
+  color: c.$white-2;
+  font-weight: 300;
+  font-size: v.$font-size-md;
+  max-height: 160px;
+}
+
+.links {
+  display: flex;
+  position: relative;
+  .link {
+    color: c.$white;
+    text-decoration: underline;
+    font-size: v.$font-size-sm;
+  }
+}
+
+.website {
+  position: absolute;
+  right: 0;
+}
